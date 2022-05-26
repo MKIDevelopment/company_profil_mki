@@ -6,8 +6,8 @@ class M_identitas extends CI_Model{
 		return $hsl;	
 	}
 
-	function simpan_identiitas($nama,$email,$alamat,$map,$telp,$fb,$twit,$ig,$apk,$gambar){
-		$hsl=$this->db->query("UPDATE tbl_identitas set identitas_nama='$nama',identitas_email='$email',identitas_alamat='$alamat',identitas_map='$map',identitas_nohp='$telp',identitas_facebook='$fb',identitas_twitter='$twit',identitas_ig='$ig',link_aplikasi='$apk',identitas_logo='$gambar'");
+	function simpan_identiitas($nama,$email,$alamat,$map,$telp,$fb,$twit,$ig,$gambar){
+		$hsl=$this->db->query("UPDATE tbl_identitas set identitas_nama='$nama',identitas_email='$email',identitas_alamat='$alamat',identitas_map='$map',identitas_nohp='$telp',identitas_facebook='$fb',identitas_twitter='$twit',identitas_ig='$ig',identitas_logo='$gambar'");
 		return $hsl;
 	}
 

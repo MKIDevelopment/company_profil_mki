@@ -52,8 +52,7 @@ class Seting extends CI_Controller{
 		                    $fb=$this->input->post('xfb');
 		                    $twit=$this->input->post('xtwit');
 		                    $ig=$this->input->post('xig');
-		                    $apk=$this->input->post('xapk');
-			               	$this->m_identitas->simpan_identiitas($nama,$email,$alamat,$map,$telp,$fb,$twit,$ig,$apk,$gambar);
+			               	$this->m_identitas->simpan_identiitas($nama,$email,$alamat,$map,$telp,$fb,$twit,$ig,$gambar);
 			                echo $this->session->set_flashdata('msg','success');
 			                redirect('admin/seting');
 					}else{

@@ -77,7 +77,6 @@
         $pengguna_tentang=$i['identitas_tentang'];
         $pengguna_facebook=$i['identitas_facebook'];
         $pengguna_twitter=$i['identitas_twitter'];
-        $link=$i['link_aplikasi'];
         $pengguna_google_plus=$i['identitas_google_plus'];
         $pengguna_ig=$i['identitas_ig'];
         $pengguna_yt=$i['identitas_yt'];
@@ -144,10 +143,6 @@
                 <div class="form-group">
                   <label for="exampleInputInstagram1">Instagram *</label>
                   <input type="text" class="form-control" name="xig" id="exampleInputInstagram1" value="<?php echo $pengguna_ig;?>" placeholder="Link Instagram" required>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputTwit1">Link Aplikasi *</label>
-                  <input type="text" class="form-control" name="xapk" id="exampleInputTwit1" value="<?php echo $link;?>" placeholder="Link Download" required>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">Logo Web *</label>

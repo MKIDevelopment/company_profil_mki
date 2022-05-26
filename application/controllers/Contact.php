@@ -12,7 +12,7 @@ class Contact extends CI_Controller{
     $x['limit']=$this->m_tulisan->limit_berita();
     $x['contact']=$this->m_identitas->get_all_pengguna();
     $x['thismont']=$this->m_pengunjung->get_sum_visitor_this_month();
-    $x['thisday']  =$this->m_pengunjung->get_average_perday();
+    $x['thisday']=$this->m_pengunjung->get_average_perday();
 		$this->load->view('depan/index',$x);
 	}
 

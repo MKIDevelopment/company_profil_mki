@@ -28,10 +28,10 @@
                         <h4>Useful Links</h4>
                         <ul>
                             <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#about">About us</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#service">Services</a></li>
+                            <!-- <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li> -->
+                            <!-- <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li> -->
                         </ul>
                     </div>
 
@@ -75,3 +75,16 @@
         </div>
     </footer>
     <!-- End Footer -->
+    <script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "'<?php echo $title['identitas_nohp'];?> '", // WhatsApp number
+            call_to_action: "Kirimi kami pesan", // Call to action
+            position: "right", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>

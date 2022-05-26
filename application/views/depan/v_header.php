@@ -49,8 +49,8 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                 <?php
                     $b=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                   ?>
-                <img src="<?php echo base_url().'assets/home/logo/'.$b['identitas_logo'];?>" style="width:70px;" alt="">
-                <span>MKI</span>
+                <img src="<?php echo base_url().'assets/home/logo/'.$b['identitas_logo'];?>" style="width: 45px;" alt="">
+                <span></span>
             </a>
 
             <nav id="navbar" class="navbar">
@@ -58,8 +58,8 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                     <li><a class="nav-link scrollto active" href="<?php echo base_url();?>home">Home</a></li>
                     <li><a class="nav-link scrollto" href="#about">About</a></li>
                     <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                    <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-                    <li><a href="<?php echo base_url();?>blog">Blog</a></li>
+                    <!--<li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>-->                    
+                    <!-- <li><a href="<?php echo base_url();?>blog">Blog</a></li> -->
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>

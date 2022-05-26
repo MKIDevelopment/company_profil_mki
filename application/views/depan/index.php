@@ -14,7 +14,7 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                     <h2 data-aos="fade-up" data-aos-delay="400">Apapun Masalahnya, MKI solusinya!</h2>
                     <div data-aos="fade-up" data-aos-delay="600">
                         <div class="text-center text-lg-start">
-                            <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                            <a href="https://wa.me/<?php echo $title['identitas_nohp'];?>" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                                 <span>Hubungi Kami</span>
                                 <i class="bi bi-arrow-right"></i>
                             </a>
@@ -38,7 +38,7 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                 <div class="row gx-0">
 
                     <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                        <div class="content">
+                        <div class="content" style="background-color: #fff;">
                             <!-- <h3>Tentang Kami</h3> -->
                             <h2>Tentang Kami</h2>
                             <p>
@@ -79,7 +79,7 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                         <div class="box" data-aos="fade-up" data-aos-delay="200">
                             <img src="<?php echo base_url();?>assets/MultiKreatifIndonesia/assets/img/values-1.png" class="img-fluid" alt="">
                             <h3>Berpengalaman</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                            <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p> -->
                         </div>
                     </div>
 
@@ -87,7 +87,7 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                         <div class="box" data-aos="fade-up" data-aos-delay="400">
                             <img src="<?php echo base_url();?>assets/MultiKreatifIndonesia/assets/img/values-2.png" class="img-fluid" alt="">
                             <h3>Pengerjaan Cepat</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                            <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p> -->
                         </div>
                     </div>
 
@@ -95,7 +95,7 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                         <div class="box" data-aos="fade-up" data-aos-delay="600">
                             <img src="<?php echo base_url();?>assets/MultiKreatifIndonesia/assets/img/values-3.png" class="img-fluid" alt="">
                             <h3>Pelayanan 24 Jam</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                            <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p> -->
                         </div>
                     </div>
 
@@ -111,13 +111,21 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
             <div class="container" data-aos="fade-up">
 
                 <div class="row gy-4">
-                <?php foreach($point->result() as $row) : ?>
+                <?php
+                    foreach ($point->result_array() as $p) :
+                    $id=$p['id_point'];
+                    $nama=$p['nama_point'];
+                    $icon=$p['icon_point'];
+                    $nilai=$p['nilai_point'];
+                    // $tanggal=$i['testimoni_tanggal'];
+                    // $gambar=$i['gambar'];
+                ?>                    
                     <div class="col-lg-3 col-md-6">
                         <div class="count-box">
-                            <i class="<?php echo $row->icon_point;?>"></i>
+                            <i class="<?php echo $icon;?>"></i>
                             <div>
-                                <span data-purecounter-start="0" data-purecounter-end="<?php echo $row->nilai_point;?>" data-purecounter-duration="1" class="purecounter"></span>
-                                <p><?php echo $row->nama_point;?></p>
+                                <span data-purecounter-start="0" data-purecounter-end="<?php echo $nilai;?>" data-purecounter-duration="1" class="purecounter"></span>
+                                <p><?php echo $nama;?></p>
                             </div>
                         </div>
                     </div>
@@ -298,18 +306,16 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
         <!-- End Pricing Section -->
 
         <!-- ======= F.A.Q Section ======= -->
-        <section id="faq" class="faq">
+<!--         <section id="faq" class="faq">
 
             <div class="container" data-aos="fade-up">
 
                 <header class="section-header">
-                    <!-- <h2>F.A.Q</h2> -->
                     <p>Pertanyaan</p>
                 </header>
 
                 <div class="row">
                     <div class="col-lg-6">
-                        <!-- F.A.Q List 1-->
                         <div class="accordion accordion-flush" id="faqlist1">
                             <?php foreach ($faq_l->result_array() as $i) :?>
                                 <div class="accordion-item">
@@ -331,7 +337,6 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
 
                     <div class="col-lg-6">
 
-                        <!-- F.A.Q List 2-->
                         <div class="accordion accordion-flush" id="faqlist2">
                             <?php foreach ($faq_r->result_array() as $r) :?>
                                 <div class="accordion-item">
@@ -354,17 +359,16 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
 
             </div>
 
-        </section>
+        </section> -->
         <!-- End F.A.Q Section -->
 
         <!-- ======= Portfolio Section ======= -->
-        <section id="portfolio" class="portfolio">
+        <!-- <section id="portfolio" class="portfolio">
 
             <div class="container" data-aos="fade-up">
 
                 <header class="section-header">
-                    <!-- <h2>Portfolio</h2> -->
-                    <p>Portfoliok</p>
+                    <p>Portfolio Kami</p>
                 </header>
 
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -400,7 +404,7 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
 
             </div>
 
-        </section>
+        </section> -->
         <!-- End Portfolio Section -->
 
         <!-- ======= Testimonials Section ======= -->
@@ -438,7 +442,7 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                                 <div class="profile mt-auto">
                                     <img src="<?php echo base_url().'assets/images/'.$gambar;?>" class="testimonial-img" alt="">
                                     <h3><?php echo $nama;?></h3>
-                                    <h4>Ceo &amp; Founder</h4>
+                                    <!-- <h4>Ceo &amp; Founder</h4> -->
                                 </div>
                             </div>
                         </div>
@@ -484,12 +488,11 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
         <!-- End Clients Section -->
 
         <!-- ======= Recent Blog Posts Section ======= -->
-        <section id="recent-blog-posts" class="recent-blog-posts">
+<!--         <section id="recent-blog-posts" class="recent-blog-posts">
 
             <div class="container" data-aos="fade-up">
 
                 <header class="section-header">
-                    <!-- <h2>Blog</h2> -->
                     <p>Artikel Baru</p>
                 </header>
 
@@ -509,7 +512,7 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
 
             </div>
 
-        </section>
+        </section> -->
         <!-- End Recent Blog Posts Section -->
 
         <!-- ======= Contact Section ======= -->
@@ -563,27 +566,24 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                     </div>
 
                     <div class="col-lg-6">
-                        <form action="<?php echo site_url('contact/kirim_pesan');?> method="POST" class="php-email-form">
+                        <div class="form contact-form">
+                          <form action="<?php echo site_url('contact/kirim_pesan');?>" method="POST" class="contactForm">
                             <div class="row gy-4">
 
                                 <div class="col-md-6">
                                     <input type="text" name="xnama" class="form-control" placeholder="Your Name" required>
-                                    <div class="validation"></div>
                                 </div>
 
                                 <div class="col-md-6 ">
-                                    <input type="xemail" class="form-control" name="email" placeholder="Your Email" required>
-                                    <div class="validation"></div>
+                                    <input type="email" class="form-control" name="xemail" placeholder="Your Email" required>
                                 </div>
 
                                 <div class="col-md-12">
                                     <input type="text" class="form-control" name="xphone" placeholder="Subject" required>
-                                    <div class="validation"></div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <textarea class="form-control" name="xmessage" rows="6" placeholder="Message" required></textarea>
-                                    <div class="validation"></div>
                                 </div>
 
                                 <div class="col-md-12 text-center">
@@ -595,7 +595,9 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                                 </div>
 
                             </div>
-                        </form>
+                          </form> 
+                        </div>
+
 
                     </div>
 

@@ -61,7 +61,7 @@ $route['portfolio/(:any)']='portfolio/detail/$1';
 
 $route['tentang-kami']='about';
 $route['dokument']='tutorial';
-$route['kontak-kami']='contact';
+$route['contact']='contact';
 $route['admin/seting/profil'] = 'admin/dashboard/profil';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
