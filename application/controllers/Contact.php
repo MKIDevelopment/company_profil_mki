@@ -24,6 +24,6 @@ class Contact extends CI_Controller{
       $this->m_kontak->kirim_pesan($nama,$email,$kontak,$pesan);
       echo $this->session->set_flashdata('msg','success');
       
-      redirect('Contact');
+      redirect('#contact');
   }
 }

@@ -50,7 +50,7 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                     $b=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                   ?>
                 <img src="<?php echo base_url().'assets/home/logo/'.$b['identitas_logo'];?>" style="width: 45px;" alt="">
-                <span></span>
+                <span>MKI</span>
             </a>
 
             <nav id="navbar" class="navbar">
