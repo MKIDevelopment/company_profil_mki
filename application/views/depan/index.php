@@ -566,8 +566,7 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                     </div>
 
                     <div class="col-lg-6">
-                        <div class="form contact-form">
-                          <form action="<?php echo site_url('contact/kirim_pesan');?>" method="POST" class="contactForm">
+                        <form action="<?php echo site_url('home/kirim_pesan');?>" method="post" class="php-email-form">
                             <div class="row gy-4">
 
                                 <div class="col-md-6">
@@ -587,17 +586,15 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                                 </div>
 
                                 <div class="col-md-12 text-center">
-                                    <div class="loading">Loading</div>
+                                    <!-- <div class="loading">Loading</div>
                                     <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                                    <div class="sent-message">Your message has been sent. Thank you!</div> -->
 
                                     <button type="submit">Send Message</button>
                                 </div>
 
                             </div>
-                          </form> 
-                        </div>
-
+                        </form>
 
                     </div>
 
@@ -628,7 +625,36 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
 
     <!-- Template Main JS File -->
     <script src="<?php echo base_url();?>assets/MultiKreatifIndonesia/assets/js/main.js"></script>
+    <script src="<?php echo base_url();?>assets/bpn/contactform/contactform.js"></script>
+
+    <script src="<?php echo base_url().'assets/plugins/toast/jquery.toast.min.js'?>"></script>
+    <?php if($this->session->flashdata('msg')=='success'):?>
+        <script type="text/javascript">
+                $.toast({
+                    heading: 'Success',
+                    text: "Terimakasih Telah Menghubungi Kami",
+                    showHideTransition: 'slide',
+                    icon: 'success',
+                    hideAfter: false,
+                    position: 'bottom-right',
+                    bgColor: '#7EC857'
+                });
+        </script>
+    <?php elseif($this->session->flashdata('msg')=='error'):?>
+        <script type="text/javascript">
+                $.toast({
+                    heading: 'Error',
+                    text: "Pesan tidak terkirim.",
+                    showHideTransition: 'slide',
+                    icon: 'error',
+                    hideAfter: false,
+                    position: 'bottom-right',
+                    bgColor: '#FF4859'
+                });
+        </script>
+    <?php else:?>
+
+    <?php endif;?>
 
 </body>
-
 </html>

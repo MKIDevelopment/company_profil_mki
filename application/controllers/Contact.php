@@ -22,8 +22,7 @@ class Contact extends CI_Controller{
       $kontak=htmlspecialchars($this->input->post('xphone',TRUE),ENT_QUOTES);
       $pesan=htmlspecialchars($this->input->post('xmessage',TRUE),ENT_QUOTES);
       $this->m_kontak->kirim_pesan($nama,$email,$kontak,$pesan);
-      echo $this->session->set_flashdata('msg','success');
-      
+      echo $this->session->set_flashdata('msg','success'); 
       redirect('#contact');
   }
 }

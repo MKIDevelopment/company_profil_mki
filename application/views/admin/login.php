@@ -115,7 +115,7 @@
         })
     </script>
     <!-- page script -->
-<?php if($this->session->flashdata('msg')=='error'):?>
+<!-- <?php if($this->session->flashdata('msg')=='error'):?>
         <script type="text/javascript">
                 $.toast({
                     heading: 'Error',
@@ -181,7 +181,7 @@
         </script>
     <?php else:?>
 
-    <?php endif;?>
+    <?php endif;?> -->
 </body>
 
 </html>
