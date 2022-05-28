@@ -566,31 +566,32 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
                     </div>
 
                     <div class="col-lg-6">
-                        <form action="<?php echo site_url('home/kirim_pesan');?>" method="post" class="php-email-form">
+                        <form action="<?php echo site_url('Contact/kirim_pesan');?>" method="post" class="contactForm">
                             <div class="row gy-4">
 
                                 <div class="col-md-6">
                                     <input type="text" name="xnama" class="form-control" placeholder="Your Name" required>
+                                    <div class="validation"></div>
                                 </div>
 
                                 <div class="col-md-6 ">
                                     <input type="email" class="form-control" name="xemail" placeholder="Your Email" required>
+                                    <div class="validation"></div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <input type="text" class="form-control" name="xphone" placeholder="Subject" required>
+                                    <div class="validation"></div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <textarea class="form-control" name="xmessage" rows="6" placeholder="Message" required></textarea>
+                                    <div class="validation"></div>
                                 </div>
 
                                 <div class="col-md-12 text-center">
-                                    <!-- <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div> -->
-
-                                    <button type="submit">Send Message</button>
+                                    <div class="validation"></div>
+                                    <button type="submit" class="btn-primary">Send Message</button>
                                 </div>
 
                             </div>
