@@ -55,7 +55,7 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="<?php echo base_url();?>home">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#home">Home</a></li>
                     <li><a class="nav-link scrollto" href="#about">About</a></li>
                     <li><a class="nav-link scrollto" href="#services">Services</a></li>
                     <!--<li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>-->                    
