@@ -17,10 +17,10 @@
                         </a>
                         <p>Kami Selalu Terhubung.</p>
                         <div class="social-links mt-3">
-                            <a href="<?php echo $b['identitas_twitter'];?>" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="<?php echo $b['identitas_facebook'];?>" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="<?php echo $b['identitas_ig'];?>" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                            <a href="<?php echo $b['identitas_twitter'];?>" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="<?php echo $b['identitas_facebook'];?>" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="<?php echo $b['identitas_ig'];?>" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
                         </div>
                     </div>
 
