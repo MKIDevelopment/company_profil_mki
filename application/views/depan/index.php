@@ -414,7 +414,7 @@ $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
 
                 <header class="section-header">
                     <!-- <h2>Testimonials</h2> -->
-                    <p>Testimonials</p>
+                    <p>Review</p>
                 </header>
                
                 <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
