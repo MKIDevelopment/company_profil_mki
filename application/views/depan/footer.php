@@ -1,21 +1,19 @@
-<?php
-    $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
-?>
+<?php $title=$this->db->query("SELECT * FROM tbl_identitas")->row_array(); ?>
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
-
         <div class="footer-top">
             <div class="container">
                 <div class="row gy-4">
-                  <?php
-                    $b=$this->db->query("SELECT * FROM tbl_identitas")->row_array();
-                  ?>
+                    <?php $b = $this->db->query("SELECT * FROM tbl_identitas")->row_array(); ?>
+
                     <div class="col-lg-5 col-md-12 footer-info">
                         <a href="index.html" class="logo d-flex align-items-center">
                             <img src="<?php echo base_url();?>assets/MultiKreatifIndonesia/assets/img/mki.png" alt="">
                             <span>MKI</span>
                         </a>
+
                         <p>Kami Selalu Terhubung.</p>
+
                         <div class="social-links mt-3">
                             <a href="<?php echo $b['identitas_twitter'];?>" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
                             <a href="<?php echo $b['identitas_facebook'];?>" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -54,9 +52,7 @@
                             <strong>Phone:</strong> <?php echo $b['identitas_nohp'];?><br>
                             <strong>Email:</strong> <?php echo $b['identitas_email'];?><br>
                         </p>
-
                     </div>
-
                 </div>
             </div>
         </div>
@@ -75,6 +71,7 @@
         </div>
     </footer>
     <!-- End Footer -->
+
     <script type="text/javascript">
     (function () {
         var options = {
