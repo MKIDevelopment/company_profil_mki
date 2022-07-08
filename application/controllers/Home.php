@@ -2,38 +2,38 @@
 class Home extends CI_Controller{
 	function __construct(){
 		parent::__construct();
-		$this->load->model('m_tulisan');
-		$this->load->model('m_album');
-		$this->load->model('m_galeri');
-		$this->load->model('m_pengumuman');
-		$this->load->model('m_agenda');
-		$this->load->model('m_baner');
-		$this->load->model('m_files');
-		$this->load->model('m_kontak');
-		$this->load->model('m_pengunjung');
-		$this->load->model('m_pengguna');
-		$this->load->model('m_identitas');
-		$this->load->model('m_testimoni');
-		$this->load->model('m_point');
-		$this->m_pengunjung->count_visitor();
+		$this->load->model('M_tulisan');
+		$this->load->model('M_album');
+		$this->load->model('M_galeri');
+		$this->load->model('M_pengumuman');
+		$this->load->model('M_agenda');
+		$this->load->model('M_baner');
+		$this->load->model('M_files');
+		$this->load->model('M_kontak');
+		$this->load->model('M_pengunjung');
+		$this->load->model('M_pengguna');
+		$this->load->model('M_identitas');
+		$this->load->model('M_testimoni');
+		$this->load->model('M_point');
+		$this->M_pengunjung->count_visitor();
 	}
 
 	function index(){
-		$x['berita']=$this->m_tulisan->get_berita_home();
-		$x['pengumuman']=$this->m_pengumuman->get_pengumuman_home();
-		$x['contact']=$this->m_identitas->get_all_pengguna();
-		$x['agenda']=$this->m_agenda->get_agenda_home();
+		$x['berita']=$this->M_tulisan->get_berita_home();
+		$x['pengumuman']=$this->M_pengumuman->get_pengumuman_home();
+		$x['contact']=$this->M_identitas->get_all_pengguna();
+		$x['agenda']=$this->M_agenda->get_agenda_home();
 		$x['tot_files']=$this->db->get('tbl_files')->num_rows();
 		$x['tot_agenda']=$this->db->get('tbl_agenda')->num_rows();
 		$x['faq_l']=$this->db->query("SELECT * FROM tbl_faq WHERE status='1' ORDER BY status");
 		$x['faq_r']=$this->db->query("SELECT * FROM tbl_faq WHERE status='2' ORDER BY status");
-		$x['baner'] = $this->m_baner->get_all_baner();
-		$x['limit']=$this->m_tulisan->limit_berita();
-		$x['testi']=$this->m_testimoni->get_all_testimoni();
-		$x['data']=$this->m_identitas->get_all_pengguna();
-		$x['gal']=$this->m_galeri->get_all_galeri();
-		$x['alb']=$this->m_album->get_all_album();
-		$x['point']=$this->m_point->get_all_point();
+		$x['baner'] = $this->M_baner->get_all_baner();
+		$x['limit']=$this->M_tulisan->limit_berita();
+		$x['testi']=$this->M_testimoni->get_all_testimoni();
+		$x['data']=$this->M_identitas->get_all_pengguna();
+		$x['gal']=$this->M_galeri->get_all_galeri();
+		$x['alb']=$this->M_album->get_all_album();
+		$x['point']=$this->M_point->get_all_point();
 		$this->load->view('depan/index',$x);
 	}
 
@@ -42,7 +42,7 @@ class Home extends CI_Controller{
 		$email=htmlspecialchars($this->input->post('xemail',TRUE),ENT_QUOTES);
 		$kontak=htmlspecialchars($this->input->post('xphone',TRUE),ENT_QUOTES);
 		$pesan=htmlspecialchars($this->input->post('xmessage',TRUE),ENT_QUOTES);
-		$this->m_kontak->kirim_pesan($nama,$email,$kontak,$pesan);
+		$this->M_kontak->kirim_pesan($nama,$email,$kontak,$pesan);
 		echo $this->session->set_flashdata('msg','success');
 		redirect('home');
 	}
